@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "github.com/sumomo-99/sanbdox-go/grpc_test/grpc_test";
+
+package grcp_test;
+
+service Test {
+    rpc GetNode (AppVersion) returns (Node);
+    rpc Health (AppVersion) returns (Live);
+}
+
+message AppVersion {
+    string app_version = 1;
+}
+
+message Node {
+    string node = 1;
+}
+
+message Live {
+    string live = 1;
+}
